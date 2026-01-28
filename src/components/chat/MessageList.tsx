@@ -14,7 +14,7 @@ interface MessageListProps {
 export function MessageList({ messages, isLoading }: MessageListProps) {
   if (messages.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)] px-4 text-center">
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)] px-4 text-center animate-in fade-in duration-500">
         <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-50 mb-4 shadow-sm">
           <Bot className="h-7 w-7 text-blue-600" />
         </div>
@@ -31,7 +31,7 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
           <div
             key={message.id || message.content}
             className={cn(
-              "flex gap-4",
+              "flex gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300",
               message.role === "user" ? "justify-end" : "justify-start"
             )}
           >
